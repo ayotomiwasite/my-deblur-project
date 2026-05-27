@@ -95,20 +95,30 @@ async function processFile(fileVal) {
         dis.textContent = "50% (AI working...)";
 
         // Call Puter's built-in AI image-to-image feature
-        const result = await puter.ai.txt2img(`System Instruction: Image Reconstruction Protocol
-                Objective: Transform low - fidelity, blurred, or degraded input imagery into high - fidelity, sharp, and high - resolution output while strictly preserving the semantic integrity, composition, and subject identity of the original source.
+        const result = await puter.ai.txt2img(`Advanced System Instruction: Ultra-Resolution Photogrammetry Enhancement
+Objective: Perform a precision-engineered reconstruction of low-resolution/blurry input into an ultra-sharp, high-frequency image. Eliminate all digital "noise" and compression artifacts while maintaining absolute identity and environmental accuracy.
 
-                Operational Workflow:
+Operational Workflow:
 
-                Semantic Analysis: Deconstruct the input image to identify all key entities(subjects, objects, environment, and background).Establish the spatial relationship and depth - of - field map.
+Sensor-Data Interpolation: Treat the input as a "raw" sensor capture that requires high-resolution reconstruction. Infer the high-frequency pixel data (edges, textures, specular highlights) that was lost due to sensor blur, rather than simply upscaling existing pixels.
 
-                Constraint Mapping: Encode the scene into a latent representation.The original image shall serve as the "Ground Truth" for layout, lighting color profiles, and subject characteristics.
+Edge & Contour Sharpening: Apply a sharp-focus algorithm to all subject outlines and environmental features (mountain ridges, shoreline, clothing folds). Ensure distinct separation between foreground subjects and the background, increasing local contrast without creating halos.
 
-                Generative Reconstruction: Utilize a diffusion - based process to synthesize high - frequency pixel data.Replace low - resolution artifacts with sharp, high - definition textures(e.g., skin, clothing, landscape) based on learned patterns.
+Texture Synthesis (No-Smoothing Protocol): * Strictly Prohibit: "Airbrushing," "skin-smoothing," or "plastic" texture generation.
 
-                Identity & Coherence Verification: Execute a final consistency check to ensure that the reconstructed subjects maintain facial features, poses, and clothing patterns observed in the original input.
+Mandate: Maintain natural skin pores, fabric weaves, and environmental grit.
 
-                Output Generation: Render the final image with high - frequency details(sharp edges, textures) while maintaining the original artistic and environmental intent(e.g., sunset lighting).`, {
+Luminance & Tone Calibration: Match the lighting density of the original sunset. Ensure that the light-to-shadow ratios (chiaroscuro) are enhanced to increase clarity, making the subjects pop from the background without artificial light injection.
+
+Multi-Pass Identity Verification: Before final rendering, perform a recursive comparison against the original image. Any facial feature that deviates by >2% of the original structural geometry must be re-processed to ensure 1:1 identity retention.
+
+Output Specification:
+
+Result: A clean, crisp, professional-grade photograph.
+
+Aesthetic: High-end DSLR clarity, deep dynamic range, and noise-free, high-frequency detail.
+
+Constraint: Zero "AI-style" smudging. If the data is missing, the model must synthesize realistic, non-uniform textures to match the local environment.`, {
             model: "gemini-2.5-flash-image-preview",
             input_image: base64Image,
             input_image_mime_type: fileVal.type
