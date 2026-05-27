@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Image Enhancer — Transform Your Photos</title>
+    <meta name="description" content="Turn blurry, low-quality photos into crisp, sharp images with our AI Image Enhancer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="img.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="top">
+        <span class="eyebrow">AI · Photo Enhancement</span>
+        <h1>AI Image Enhancer</h1>
+        <p class="subtitle">
+          Turn your blurry, low-resolution photos into stunningly sharp,
+          crystal-clear images — in seconds.
+        </p>
+
+        <div class="box">
+          <label for="file" class="uploadTrigger" id="uploadImg">
+            <span class="uploadText">Upload a blurry image</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </label>
+
+          <div class="uploadBox" id="preview">
+            <div class="placeholder">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <p>Drop an image here or click <span>Upload</span> above</p>
+              <small>PNG, JPG or WEBP · up to 10MB</small>
+            </div>
+          </div>
+
+          <input type="file" accept="image/*" id="file" hidden />
+
+          <div class="prog">
+            <progress value="0" max="100" id="progressVal"></progress>
+            <p class="display" id="dis">0%</p>
+            <p class="err" id="err"></p>
+          </div>
+        </div>
+
+        <ul class="features" aria-label="Key features">
+          <li>
+            <strong>4× Sharper</strong>
+            <span>Restore fine details lost to blur and compression.</span>
+          </li>
+          <li>
+            <strong>Seconds, not minutes</strong>
+            <span>On-device AI delivers near-instant results.</span>
+          </li>
+          <li>
+            <strong>Privacy first</strong>
+            <span>Your photos never leave your browser.</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <div class="uploadedImg" role="dialog" aria-modal="true" aria-label="Enhanced image preview">
+      <span class="done">Your image is now ready</span>
+      <div class="DoneIMG">
+        <figure>
+          <img src="phone.webp" alt="Original blurry photo" class="img" id="blurrImg"/>
+          <figcaption>Before</figcaption>
+        </figure>
+        <span class="to" aria-hidden="true">→</span>
+        <figure>
+          <img src="1280px-Gmail_icon_(2020).svg.png" class="img" alt="Enhanced sharp photo" id="enhancedImg"/>
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
+      <button class="dwnd" type="button">
+        Download now
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          class="dwn"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </button>
+    </div>
+<script src="https://js.puter.com/v2/"></script>
+    <script type="module" src="img.js"></script>
+      <!-- <script>
+        // Loading ...
+        puter.print(`Loading...`);
+
+        // Chat with GPT-5.4 nano
+        puter.ai.chat(`What is life?`, {
+            model: 'gpt-5.4-nano',
+        }).then(puter.print);
+
+    </script> -->
+  </body>
+</html>
