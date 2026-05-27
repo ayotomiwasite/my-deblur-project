@@ -10,14 +10,14 @@ const enhancedImg = document.getElementById("enhancedImg");
 const err = document.getElementById("err");
 
 const enhanceOverlayMarkup = `
-    <div class="enhanceOverlay" aria-live="polite" aria-label="Enhancing image">
-        <div class="dotGrid" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-        </div>
-        <span class="enhanceLabel">Enhancing image...</span>
-    </div>
-`;
+                <div class="enhanceOverlay" aria-live="polite" aria-label="Enhancing image">
+                <div class="dotGrid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                </div>
+                <span class="enhanceLabel">Enhancing image...</span>
+                </div>
+                `;
 
 function setEnhancingState(isEnhancing) {
     preview.classList.toggle("enhancing", isEnhancing);
@@ -95,7 +95,20 @@ async function processFile(fileVal) {
         dis.textContent = "50% (AI working...)";
 
         // Call Puter's built-in AI image-to-image feature
-        const result = await puter.ai.txt2img("Enhance this image, improve quality and clarity to the highest level", {
+        const result = await puter.ai.txt2img(`System Instruction: Image Reconstruction Protocol
+                Objective: Transform low - fidelity, blurred, or degraded input imagery into high - fidelity, sharp, and high - resolution output while strictly preserving the semantic integrity, composition, and subject identity of the original source.
+
+                Operational Workflow:
+
+                Semantic Analysis: Deconstruct the input image to identify all key entities(subjects, objects, environment, and background).Establish the spatial relationship and depth - of - field map.
+
+                Constraint Mapping: Encode the scene into a latent representation.The original image shall serve as the "Ground Truth" for layout, lighting color profiles, and subject characteristics.
+
+                Generative Reconstruction: Utilize a diffusion - based process to synthesize high - frequency pixel data.Replace low - resolution artifacts with sharp, high - definition textures(e.g., skin, clothing, landscape) based on learned patterns.
+
+                Identity & Coherence Verification: Execute a final consistency check to ensure that the reconstructed subjects maintain facial features, poses, and clothing patterns observed in the original input.
+
+                Output Generation: Render the final image with high - frequency details(sharp edges, textures) while maintaining the original artistic and environmental intent(e.g., sunset lighting).`, {
             model: "gemini-2.5-flash-image-preview",
             input_image: base64Image,
             input_image_mime_type: fileVal.type
